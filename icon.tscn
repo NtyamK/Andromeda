@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://g887h2w8feys"]
+[gd_scene load_steps=2 format=3 uid="uid://dmenqrqoevewb"]
 
 [ext_resource type="Script" path="res://Scripts/Mulitplayer/NetworkManager.cs" id="1_41ndi"]
 

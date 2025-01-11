@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Andromeda"
-run/main_scene="res://Scenes/DEBUG/multiplayer_test.tscn"
+run/main_scene="res://Scenes/DEBUG/Matchmaking/Matchmaking.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
 
@@ -22,7 +22,8 @@ project/assembly_name="Andromeda"
 [file_customization]
 
 folder_colors={
-"res://Scenes/": "pink",
+"res://Assets/": "orange",
+"res://Scenes/": "purple",
 "res://Scripts/": "gray"
 }
 
