@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfq5jto5sxcx"]
+
+[ext_resource type="PackedScene" uid="uid://dtssgpdnrnv5x" path="res://Scenes/DEBUG/basic_player.tscn" id="1_qstnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pxs0"]
+size = Vector2(1420, 74)
+
+[node name="Game" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(562, 582)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, 27)
+shape = SubResource("RectangleShape2D_6pxs0")
+one_way_collision = true
+
+[node name="basic_player" parent="." instance=ExtResource("1_qstnf")]
+position = Vector2(538, 78)
