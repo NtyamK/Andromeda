@@ -6,7 +6,6 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="com.playfab.csharpgsdk" Version="0.11.210519" />
-    <PackageReference Include="PlayFabAllSDK" Version="1.193.241122" />
+    <PackageReference Include="AWSSDK.GameLift" Version="3.7.403.6" />
   </ItemGroup>
 </Project>

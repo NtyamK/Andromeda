@@ -755,6 +755,5 @@ func _set_border(sb: StyleBoxFlat, color: Color, width: float = 1, blend: bool =
 	sb.set_border_width_all(int(ceilf(width * scale)))
 "
 
-
 [resource]
 script = SubResource("GDScript_hhmc0")
