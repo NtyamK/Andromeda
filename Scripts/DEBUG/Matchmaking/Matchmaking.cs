@@ -15,6 +15,21 @@ public partial class Matchmaking : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+<<<<<<< Updated upstream
+=======
+		PlayFabSettings.staticSettings.TitleId = playFabTitleId; // Set PlayFab title
+        PlayFabSettings.staticSettings.DeveloperSecretKey = developerSecretKey;  // Set your secret key
+		if (OS.HasFeature("dedicated_server"))
+		{
+			GD.Print("Dedicated server started...");
+			BecomeHost();
+		}
+	}
+	private void OnLoginSuccess(LoginResult result)
+    {
+        GD.Print("Login successful!");
+    }
+>>>>>>> Stashed changes
 
 	}
 
@@ -49,7 +64,8 @@ public partial class Matchmaking : Node2D
 		Multiplayer.PeerConnected += OnPeerConnected;
 		Multiplayer.PeerDisconnected += OnPeerDisconnected;
 
-		OnPeerConnected(1);
+		if (!OS.HasFeature("dedicated_server"))
+			OnPeerConnected(1);
 	}
 	// Handle client connection
 	private void BecomeClient()
@@ -74,5 +90,7 @@ public partial class Matchmaking : Node2D
 		newPlayer.Name = id.ToString();
 
 		playerGroup.AddChild(newPlayer);
+
+		GD.Print(string.Format("Client {0} joined.", id));
 	}
 }
