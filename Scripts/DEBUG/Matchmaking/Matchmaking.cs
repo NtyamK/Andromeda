@@ -15,22 +15,11 @@ public partial class Matchmaking : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-<<<<<<< Updated upstream
-=======
-		PlayFabSettings.staticSettings.TitleId = playFabTitleId; // Set PlayFab title
-        PlayFabSettings.staticSettings.DeveloperSecretKey = developerSecretKey;  // Set your secret key
 		if (OS.HasFeature("dedicated_server"))
 		{
 			GD.Print("Dedicated server started...");
 			BecomeHost();
 		}
-	}
-	private void OnLoginSuccess(LoginResult result)
-    {
-        GD.Print("Login successful!");
-    }
->>>>>>> Stashed changes
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
