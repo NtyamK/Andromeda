@@ -1,14 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://q4fd3xyod3iw"]
 
 [ext_resource type="Texture2D" uid="uid://cka5omh2hsvah" path="res://assets/DEBUG/Matchmaking/UI/matchmaking_dialog_close-icon.svg" id="1_hu5wt"]
-[ext_resource type="Script" path="res://Scripts/DEBUG/Matchmaking/Matchmaking.cs" id="1_llj3i"]
-[ext_resource type="PackedScene" uid="uid://bumkcc4coh6q4" path="res://scenes/DEBUG/Matchmaking/MultiplayerPlayer.tscn" id="2_3qng2"]
+[ext_resource type="Script" path="res://scripts/DEBUG/Matchmaking/Startup.cs" id="2_ocbkj"]
+[ext_resource type="Script" path="res://scripts/DEBUG/Matchmaking/GameliftServer.cs" id="3_tkwgc"]
 
-[node name="Matchmaking" type="Node2D" node_paths=PackedStringArray("playerGroup", "UI")]
-script = ExtResource("1_llj3i")
-playerScene = ExtResource("2_3qng2")
-playerGroup = NodePath("Players")
-UI = NodePath("Control")
+[node name="Matchmaking" type="Node2D"]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/DEBUG/Matchmaking/MultiplayerPlayer.tscn")
@@ -134,6 +130,14 @@ text = "Host Match"
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2(579, 325)
+
+[node name="Gamelift" type="Node" parent="."]
+
+[node name="Startup" type="Node" parent="Gamelift"]
+script = ExtResource("2_ocbkj")
+
+[node name="Server" type="Node" parent="Gamelift"]
+script = ExtResource("3_tkwgc")
 
 [connection signal="pressed" from="Control/MarginContainer/DialogBox/MarginContainer/VBox/ContentPanel/MarginContainer/Container/HBoxContainer/FindMatchButton" to="." method="_on_find_match_label_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/DialogBox/MarginContainer/VBox/ContentPanel/MarginContainer/Container/HBoxContainer/HostMatchButton" to="." method="_on_host_match_button_pressed"]
