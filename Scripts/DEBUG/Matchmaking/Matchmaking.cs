@@ -18,7 +18,7 @@ public partial class Matchmaking : Node2D
 <<<<<<< Updated upstream
 =======
 		PlayFabSettings.staticSettings.TitleId = playFabTitleId; // Set PlayFab title
-        PlayFabSettings.staticSettings.DeveloperSecretKey = developerSecretKey;  // Set your secret key
+		PlayFabSettings.staticSettings.DeveloperSecretKey = developerSecretKey;  // Set your secret key
 		if (OS.HasFeature("dedicated_server"))
 		{
 			GD.Print("Dedicated server started...");
@@ -26,9 +26,9 @@ public partial class Matchmaking : Node2D
 		}
 	}
 	private void OnLoginSuccess(LoginResult result)
-    {
-        GD.Print("Login successful!");
-    }
+	{
+		GD.Print("Login successful!");
+	}
 >>>>>>> Stashed changes
 
 	}
