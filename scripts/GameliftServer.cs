@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using Aws.GameLift.Server;
 using Aws.GameLift.Server.Model;
+using WebSocketSharp;
+using log4net;
+using System.Security.Permissions;
 
 public partial class GameliftServer : Node
 {
@@ -16,30 +19,8 @@ public partial class GameliftServer : Node
 		//Identify port number (hard coded here for simplicity) the game server is listening on for player connections
 		var listeningPort = 7777;
 
-		//WebSocketUrl from RegisterHost call
-		var webSocketUrl = "wss://us-west-2.api.amazongamelift.com";
-
-		//Unique identifier for this process
-		var processId = "myProcess";
-
-		//Unique identifier for your host that this process belongs to
-		var hostId = "myHost";
-
-		//Unique identifier for your fleet that this host belongs to
-		var fleetId = "myFleet";
-
-		//Authentication token for this host process.
-		var authToken = "myAuthToken";
-
-		ServerParameters serverParameters = new ServerParameters(
-			webSocketUrl,
-			processId,
-			hostId,
-			fleetId,
-			authToken);
-
 		//InitSDK will establish a local connection with Amazon GameLift's agent to enable further communication.
-		var initSDKOutcome = GameLiftServerAPI.InitSDK(serverParameters);
+		var initSDKOutcome = GameLiftServerAPI.InitSDK();
 		if (initSDKOutcome.Success)
 		{
 			ProcessParameters processParameters = new ProcessParameters(
