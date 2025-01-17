@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "dotnet: build",
-            "program":"Z:/2025/Andromeda/Engine/Godot_v4.3-stable_mono_win64.exe",
+            "program":"/home/workstation/Desktop/Andromeda/Engine/Godot_v4.3-stable_mono_linux.x86_64",
             "cwd":"${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false,

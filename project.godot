@@ -10,22 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Andromeda"
-run/main_scene="res://Scenes/DEBUG/Matchmaking/Matchmaking.tscn"
+config/name="andromeda"
+run/main_scene="res://scenes/server.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Andromeda"
-
-[file_customization]
-
-folder_colors={
-"res://Assets/": "orange",
-"res://Scenes/": "purple",
-"res://Scripts/": "gray"
-}
+project/assembly_name="andromeda"
 
 [rendering]
 
