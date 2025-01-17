@@ -5,7 +5,7 @@ using System;
 public partial class NetworkManager : Node
 {
 
-	[Export] public bool isServer = false;
+	[Export] public bool isServer = true;
 	const int PORT = 8080;
 
 	public delegate void StartService(int port);

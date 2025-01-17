@@ -8,9 +8,9 @@ public partial class Server : Node
 {
 	private const float ReadyForPlayersDelay = 0.5f;
     private const float ShutdownDelay = 5f;
-
 	static private List<ConnectedPlayer> players = new List<ConnectedPlayer>();
-    public override void _Ready()
+	
+	public override void _Ready()
     {
         NetworkManager.instance.startService += CreateServer;
     }
@@ -85,17 +85,20 @@ public partial class Server : Node
 		ShutdownServer();
 	}
 
+	private void OnShutdown()
+	{
+		GameserverSDK.LogMessage("Shutting down...");
+		GD.Print("[StartShutdownProcess]: Server is shutting down.");
+		ShutdownServer();
+    	/* Perform any necessary cleanup and end the program */
+	}
+
 	async void ShutdownServer()
 	{
 		await ToSignal(GetTree().CreateTimer(ShutdownDelay), "timeout");
 		GetTree().Quit();
 	}
-	
-	static void OnShutdown()
-	{
-		GameserverSDK.LogMessage("Shutting down...");
-    	/* Perform any necessary cleanup and end the program */
-	}
+
 	static void OnMaintenance(DateTimeOffset time)
 	{
 		/* Perform any necessary cleanup, notify your players, etc. */
